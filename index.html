@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--meta http-equiv="refresh" content="1;url="-->
+    <title>Audio Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ZulNs">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="all">
+    <meta name="copyright" content="ZulNs">
+    <meta name="validity_code" content="88CAE6D2CEDCCAC840C4F240B4EAD89CE640808EDEE4DEDCE8C2D8DE58406C4094C2DCEAC2E4F24064606462">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="../libs/p5.js/v1.1.9/p5.min.js" language="javascript" type="text/javascript"></script>
+    <script src="../libs/p5.js/p5.sound.js/v0.3.11/p5.sound.min.js" language="javascript" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <div id="input_file_holder">
+      <label>Select audio file:</label>
+      <button id="input_file_alias">Browse...</button>
+    </div>
+    <p id="file_name">&nbsp;</p>
+    <div id="canvas_holder"></div>
+    <div style="margin-top: 10px;">
+      <progress id="playing_progress" value="0" max="100"></progress>
+    </div>
+    <div class="button_holder" style="display: inline-flex; overflow: hidden; margin-top: 16px;">
+      <button id="button_play"><div class="play-icon"></div></button>
+      <button id="button_pause" style="margin: 0 56px"><div class="pause-icon"></div></button>
+      <button id="button_stop"><div class="stop-icon"></div></button>
+    </div>
+    <br/>
+    <div style="display: inline-flex; overflow: hidden; margin-top: 16px;">
+      <div style="width: 140px;">
+        <input id="waveform" type="radio" name="fft" value="wf" checked>
+        <label for="waveform">Waveform</label>
+      </div>
+      <div style="width: 160px;">
+        <input id="freq_spectrum" type="radio" name="fft" value="fs">
+        <label for="freq_spectrum">Frequency&nbspspectrum</label>
+      </div>
+    </div>
+    <div style=" margin-top: 16px;">
+      <div>
+        <label for="volume">Volume&nbsp;&nbsp;&nbsp;<span id="volume_text"></span><br/></label>
+        <input id="volume" type="range" min="0" max="100" step="1" value="100">
+      </div>
+      <div>
+        <label for="balance">Balance&nbsp;&nbsp;&nbsp;<span id="balance_text"></span><br/></label>
+        <input id="balance" type="range" min="0" max="100" step="1" value="50">
+      </div>
+      <div>
+        <label for="speed">Speed&nbsp;&nbsp;&nbsp;<span id="speed_text"></span><br/></label>
+        <input id="speed" type="range" min="0" max="100" step="1" value="50">
+      </div>
+    </div>
+    
+    <script src="sketch.js" language="javascript" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+:root {
+  --volume-value: 100%;
+  --balance-value: 50%;
+  --speed-value: 50%;
+}
+
+input[type=radio]:not(:checked), input[type=radio]:not(:checked)~label {
+  cursor: pointer;
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 12px;
+  border-radius: 2px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #ddd;
+  border-radius: 2px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress::-webkit-progress-value {
+  background-color: #25c;
+}
+
+progress::-moz-progress-bar {
+  background-color: #25c;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+button > div {
+  margin: 4px 8px;
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-left: 18px solid #333;
+  border-bottom: 9px solid transparent;
+}
+
+.pause-icon {
+  width: 4px;
+  height: 18px;
+  border-left: 7px solid #333;
+  border-right: 7px solid #333;
+}
+
+.stop-icon {
+  width: 0;
+  height: 0;
+  border: 9px solid #333;
+}
+
+button.active .play-icon {
+  border-left-color: #186;
+}
+
+button.active .pause-icon {
+  border-left-color: #e82;
+  border-right-color: #e82;
+}
+
+button:active .play-icon {
+  border-left-color: #f00;
+}
+
+button:active .pause-icon {
+  border-left-color: #f00;
+  border-right-color: #f00;
+}
+
+button:active .stop-icon {
+  border-color: #f00;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+button:disabled div{
+  opacity: 0.3;
+}
+
+button:disabled:active .play-icon {
+  border-left-color: #333;
+}
+
+button:disabled:active .pause-icon {
+  border-left-color: #333;
+  border-right-color: #333;
+}
+
+button:disabled:active .stop-icon {
+  border-color: #333;  
+}
+
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring {
+  border: none;
+  outline: 2px solid ButtonText;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 300px;
+  height: 6px;
+  border-radius: 3px;
+  border: 1px solid black;
+  outline: none;
+  background: #58f;
+  margin: 16px 0 16px 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 12px;
+  height: 24px;
+  border-radius: 20%;
+  border: 1px solid black;
+  cursor: pointer;
+  background: #25c;
+}
+
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 11px;
+  height: 23px;
+  border-radius: 20%;
+  border: 1px solid black;
+  cursor: pointer;
+  background: #25c;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: 1px dotted #333;
+  outline-offset: 6px;
+}
+
+input[type=range]:focus::-moz-range-track {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: 1px dotted #333;
+  outline-offset: 16px;
+}
+
+#volume {
+  background: linear-gradient(to right, #25c 0%, #25c var(--volume-value), #ddd var(--volume-value), #ddd 100%);
+}
+
+#balance, #speed {
+  background: linear-gradient(to right, #186 0%, #186 var(--balance-value), #fc2 var(--balance-value), #fc2 100%);
+}
+
+#speed {
+  background: linear-gradient(to right, #186 0%, #186 var(--speed-value), #fc2 var(--speed-value), #fc2 100%);
+}
