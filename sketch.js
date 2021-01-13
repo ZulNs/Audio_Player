@@ -83,7 +83,6 @@ function setup(){
 }
 
 function draw() {
-  let c;
   background(32);
 
   if (radioWaveform.checked) {
@@ -96,8 +95,7 @@ function draw() {
     noFill();
     strokeWeight(2);
     beginShape();
-    c = getRainbowColor(wfCtr, fftBands);
-    stroke(c.r, c.g, c.b);
+    stroke(getRainbowColor(wfCtr, fftBands));
     for (let i = 0; i < fftBands; i++){
       vertex(map(i, 0, fftBands-1, 0, width), map(waveform[i], -1, 1, height, 0));
     }
@@ -118,8 +116,7 @@ function draw() {
     for (let i = 0; i < fftBands; i++){
       let x = map(i, 0, fftBands-1, 0, width);
       let h = -height + map(freqSpectrum[i], 0, 255, height, 0);
-      c = getRainbowColor(i, fftBands);
-      fill(c.r, c.g, c.b);
+      fill(getRainbowColor(i, fftBands));
       rect(x, height, width/fftBands, h) ;
     }
   }
@@ -261,5 +258,5 @@ function getRainbowColor(step, numOfSteps) {
 		case 4: r = u;   g = 0;   b = 255; break;
 		case 5: r = 255; g = 0;   b = d;
 	}
-	return {'r': r, 'g': g, 'b': b};
+	return [r, g, b, 255];
 }
